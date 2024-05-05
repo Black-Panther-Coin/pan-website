@@ -1,0 +1,16 @@
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  .marquee {
+    animation: marquee 30s linear infinite;
+  }
+  /* @media only screen and (min-width: 390px) {
+    
+    #animated {
+      margin-top: 18em;
+    }
+  } */
+
+  

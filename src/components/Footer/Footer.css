@@ -1,0 +1,10 @@
+/* Footer.css */
+.footer {
+    background-color: #6a0573; /* Deep purple background */
+    color: #fff; /* Text color */
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%; /* Ensure it spans the full width */
+   }
+   

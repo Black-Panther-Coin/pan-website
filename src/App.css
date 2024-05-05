@@ -1,0 +1,10 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@media only screen and (min-width: 390px) {
+    
+    #animated {
+      margin-top: 18em;
+    }
+  }
