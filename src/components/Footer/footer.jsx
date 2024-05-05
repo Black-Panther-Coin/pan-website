@@ -1,48 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import bgImage from "../../assets/images/bg7.png";
-import Item1Image from "../../assets/images/doge-coin-logo-1024x1024.png";
-import Item2Image from "../../assets/images/shiba-inu-coin-logo.png";
-import Item3Image from "../../assets/images/pepe-coin-logo.png";
+import DonationModal from "../Modal/donationModal";
 
 const Footer = () => {
+  // Mock donation data
+  const donationTarget = 100000;
+  const currentDonation = 15000;
+  const donationProgress = (currentDonation / donationTarget) * 100;
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
   return (
     <footer className="bg-gray-800 py-12 px-4 md:px-8 w-full relative">
       <div
         className="absolute top-0 left-0 w-full h-full"
         style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}
       />
-      <div className="container mx-auto relative z-10 flex flex-col items-start">
-        <div className="justify-between items-center">
-          {/* Dogecoin  Section */}
-          <div className="flex items-center mb-8">
-            <img src={Item1Image} alt="Dogecoin" className="w-20 md:w-40 h-auto mr-4" />
-            <div>
-              <h1 onClick={() => window.open("https://edition.cnn.com/2021/05/14/investing/crypto-shiba-inu-brothers-millionaires/index.html", "_blank")} className="text-lg md:text-3xl font-bold text-white mb-2 cursor-pointer">
-                From Jobless to Millionaire!
-              </h1>
-            </div>
-          </div>
-
-          {/* Shiba Section */}
-          <div className="flex items-center mb-8">
-            <img src={Item2Image} alt="Shiba " className="w-20 md:w-40 h-auto mr-4" />
-            <div>
-              <h1 onClick={() => window.open("https://news.bitcoin.com/dogecoin-investor-millionaire-inspired-by-elon-musk/", "_blank")} className="text-lg md:text-3xl font-bold text-white mb-2 cursor-pointer">
-                Dogecoin Millionaire in 2 Months
-              </h1>
-            </div>
-          </div>
-
-          {/* Pepe Section */}
-          <div className="flex items-center mb-8">
-            <img src={Item3Image} alt="Pepe" className="w-20 md:w-40 h-auto mr-4" />
-            <div>
-              <h1 onClick={() => window.open("https://www.analyticsinsight.net/a-man-who-turned-27-into-1-million-with-a-pepe-coin-makes-a-massive-investment-into-digitoads/", "_blank")} className="text-lg md:text-3xl font-bold text-white mb-2 cursor-pointer">
-                $27 Turns Into 1Million
-              </h1>
-            </div>
-          </div>
+      <div className="container mx-auto relative z-10 flex flex-col items-center justify-center">
+        {/* Donate Button */}
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={openModal}
+            className="bg-yellow-500 text-white font-bold py-4 px-8 rounded-lg hover:bg-yellow-600 text-lg"
+          >
+            Donate Now
+          </button>
         </div>
+        {/* Donation Target and Progress Bar */}
+        <div className="mt-6 text-center">
+          <p className="text-white mb-2 text-lg">
+            Donation Target: ${donationTarget}
+          </p>
+          <div className="bg-gray-600 h-10 rounded-full overflow-hidden">
+            <div
+              className="bg-yellow-500 h-full rounded-full"
+              style={{ width: `${donationProgress}%` }}
+            />
+          </div>
+          <p className="text-white mt-2 text-lg">
+            Current amount donated: ${currentDonation}
+          </p>
+        </div>
+        {/* Visit Foundation Website Link */}
+        <a
+          href="http://blackpanthertkn.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-yellow-500 mt-8 text-lg hover:underline"
+        >
+          Visit Black Panther Foundation Website
+        </a>
+        <DonationModal isOpen={modalIsOpen} onRequestClose={closeModal} />
         {/* Footer Bottom Section */}
         <div className="text-center mt-8 items-center">
           <p className="text-white">

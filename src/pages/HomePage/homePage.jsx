@@ -15,7 +15,7 @@ import "./homePage.css";
 
 const HomePage = () => {
   const [value, setValue] = useState("");
-  const [usdValue, setUsdValue] = useState("")
+  const [usdValue, setUsdValue] = useState("");
   const [showPopup, setShowPopup] = useState(true);
   const [launchDate, setLaunchDate] = useState(new Date("2024-05-01T00:00:00"));
 
@@ -56,7 +56,7 @@ const HomePage = () => {
     onSuccess: () => {
       toast.success("PNTHR bought successfully, check your wallet address.");
       setValue("");
-      window.reload()
+      window.reload();
     },
     onError: () => toast.error("An Error Occurred"),
   });
@@ -125,130 +125,135 @@ const HomePage = () => {
             Black Panther Token
           </h1>
           <h1 className="text-xl text-center md:text-left md:text-4xl leading-tight font-bold text-white my-4">
-            Private Sale is <br /> Live
+            Private Sale is Now <br /> Live
           </h1>
 
           <p
             className={`mt-4 text-sm text-center  md:text-left md:text-md text-white`}
           >
-            Participate in the private sale of{" "}
+            {" "}
             <span className="font-bold">Black Panther</span>{" "}
-            <span className=" font-bold">(BPNTHR)</span>. <br />{" "}
-            <span className="font-bold">
-              {" "}
-              <span className="text-yellow-500">
-                {" "}
-                A MEME COIN WITH PURPOSE!
-              </span>
-            </span>{" "}
-            <br /> Connect your wallet and buy{" "}
-            <span className="font-bold">Black Panther Token</span>
-            &nbsp;&nbsp;(BPNTHR)
+            <span className=" font-bold">(BPNTHR)</span>.{" "}
+            <span className="font-bold"> </span> <br /> join our telegram chanel
+            for more information <br />
+            <span className="text-yellow-500"> A MEME COIN WITH PURPOSE!</span>
           </p>
 
-          <p
+          {/* <p
             className={`mt-4 text-sm text-center  md:text-left md:text-md text-white`}
           >
             Please Go to your Wallet Address and <span className="font-bold text-yellow-500">CUSTOM IMPORT</span> the <br />{" "}
              <span className="font-bold text-yellow-500">BPNTHR</span> ticker by <span className="font-bold text-yellow-500">Copy pasting</span> Contract Address inside <br />{" "}
              your wallet in order to view the number of tokens you have bought. <br />{" "}
-          </p>
+          </p> */}
 
-          <p className={`mt-4 text-sm text-center  md:text-left md:text-md text-white`}>
-            <span className="font-bold text-yellow-500">Contract Address :</span> <br />{" "}
-             <span>0x12a55f6aBDfE13a44eF8b29a24964e20D21E0fA5</span>
+          <p
+            className={`mt-4 text-sm text-center  md:text-left md:text-md text-white`}
+          >
+            <span className="font-bold text-yellow-500">
+              Contract Address :
+            </span>{" "}
+            <br /> <span>0x12a55f6aBDfE13a44eF8b29a24964e20D21E0fA5</span>
           </p>
 
           <animated.div
-              style={buttonAnimation}
-              className="mt-4 mb-28 flex flex-col md:flex-row items-start md:items-center w-full"
+            style={buttonAnimation}
+            className="mt-4 mb-28 flex flex-col md:flex-row items-start md:items-center w-full"
+          >
+            {/* <div className="flex md:w-1/4">
+              <input
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                type="number"
+                placeholder="Enter BNB"
+                className="text-white bg-black font-bold py-3 px-6 md:px-8 rounded border border-black my-2 md:my-0 mr-1 text-sm md:text-md w-full md:w-2/3"
+              />
+              <input
+                value={usdValue}
+                placeholder="USD"
+                className="text-white bg-black font-bold py-3 px-6 md:px-8 rounded border border-black my-2 md:my-0 md:mr-4 text-sm md:text-md w-full md:w-1/3"
+                disabled
+              />
+            </div> */}
+            <button
+              onClick={() =>
+                window.open("https://t.me/blackpanthertkn", "_blank")
+              }
+              className="bg-yellow-500 hover:bg-gray-200 text-black font-bold py-3 px-6 md:px-8 rounded-full md:my-0 text-sm md:text-md w-full md:w-auto"
             >
-              <div className="flex md:w-1/4">
-                <input
-                  value={value}
-                  onChange={(e) => setValue(e.target.value)}
-                  type="number"
-                  placeholder="Enter BNB"
-                  className="text-white bg-black font-bold py-3 px-6 md:px-8 rounded border border-black my-2 md:my-0 mr-1 text-sm md:text-md w-full md:w-2/3"
-                />
-                <input
-                  value={usdValue}
-                  placeholder="USD"
-                  className="text-white bg-black font-bold py-3 px-6 md:px-8 rounded border border-black my-2 md:my-0 md:mr-4 text-sm md:text-md w-full md:w-1/3"
-                  disabled
-                />
-              </div>
-              <button
-                onClick={buyToken}
-                className="bg-yellow-500 hover:bg-gray-200 text-black font-bold py-3 px-6 md:px-8 rounded-full md:my-0 text-sm md:text-md w-full md:w-auto"
-              >
-                {label}
-              </button>
-              <div className="text-center mt-3">
-                <ul>
-                  <li>
-                    {isMobile && (
-                      <a
+              Join Telegram Channel
+            </button>
+
+            <div className="text-center mt-3">
+              <ul>
+                <li>
+                  {isMobile && (
+                    <a
                       className="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-4 py-2 text-center cursor-pointer"
-                      onClick={() => window.open("https://bscscan.com/address/0x12a55f6aBDfE13a44eF8b29a24964e20D21E0fA5", "_blank")}
+                      onClick={() =>
+                        window.open(
+                          "https://bscscan.com/address/0x12a55f6aBDfE13a44eF8b29a24964e20D21E0fA5",
+                          "_blank"
+                        )
+                      }
                       aria-current="page"
                     >
                       Click to View Contract
                     </a>
-                    )}
-                  </li>
-                </ul>
+                  )}
+                </li>
+              </ul>
             </div>
-            </animated.div>
+          </animated.div>
         </animated.div>
       </div>
-      
+
       <animated.div
-          style={logoAnimation}
-          className="mt-8 flex flex-col items-center"
-        >
-          <PantherLogo className="w-12 h-12 md:w-16 md:h-16" />
-          <span className="text-yellow-500 font-bold mt-2 text-base md:text-lg">
-            BLACK PANTHER (BPNTHR)
-          </span>
-          <div className="flex mt-4 mb-9">
-            <a
-              href="https://t.me/blackpanthertkn"
-              target="_blank"
-              className="mr-2 md:mr-4 text-white hover:text-gray-300"
-            >
-              Telegram
-            </a>
-            <a
-              href="https://twitter.com/BlackPanthertkn"
-              target="_blank"
-              className="mr-2 md:mr-4 text-white hover:text-gray-300"
-            >
-              Twitter
-            </a>
-            <a
-              href="https://discord.com/invite/cQHYs5mUwJ"
-              target="_blank"
-              className="mr-2 md:mr-4 text-white hover:text-gray-300"
-            >
-              Discord
-            </a>
-            <a
-              href="https://www.tiktok.com/@blackpanthertkn"
-              target="_blank"
-              className="mr-2 md:mr-4 text-white hover:text-gray-300"
-            >
-              TikTok
-            </a>
-            <a
-              href="https://www.instagram.com/blackpanthertkn/"
-              target="_blank"
-              className="text-white hover:text-gray-300"
-            >
-              Instagram
-            </a>
-          </div>
-        </animated.div>
+        style={logoAnimation}
+        className="mt-8 flex flex-col items-center"
+      >
+        <PantherLogo className="w-12 h-12 md:w-16 md:h-16" />
+        <span className="text-yellow-500 font-bold mt-2 text-base md:text-lg">
+          BLACK PANTHER (BPNTHR)
+        </span>
+        <div className="flex mt-4 mb-9">
+          <a
+            href="https://t.me/blackpanthertkn"
+            target="_blank"
+            className="mr-2 md:mr-4 text-white hover:text-gray-300"
+          >
+            Telegram
+          </a>
+          <a
+            href="https://twitter.com/BlackPanthertkn"
+            target="_blank"
+            className="mr-2 md:mr-4 text-white hover:text-gray-300"
+          >
+            Twitter
+          </a>
+          <a
+            href="https://discord.com/invite/cQHYs5mUwJ"
+            target="_blank"
+            className="mr-2 md:mr-4 text-white hover:text-gray-300"
+          >
+            Discord
+          </a>
+          <a
+            href="https://www.tiktok.com/@blackpanthertkn"
+            target="_blank"
+            className="mr-2 md:mr-4 text-white hover:text-gray-300"
+          >
+            TikTok
+          </a>
+          <a
+            href="https://www.instagram.com/blackpanthertkn/"
+            target="_blank"
+            className="text-white hover:text-gray-300"
+          >
+            Instagram
+          </a>
+        </div>
+      </animated.div>
       {showPopup && <Popup onClose={handleClosePopup} />}
       <div className="overflow-y-scroll">
         <Footer />
