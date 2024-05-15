@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import bgImage from "../../assets/images/bg7.png";
-import DonationModal from "../Modal/donationModal";
+import DonationPopup from "../Popups/donationPopup";
 
 const Footer = () => {
   // Mock donation data
   const donationTarget = 100000;
-  const currentDonation = 15000;
+  const currentDonation = 0;
   const donationProgress = (currentDonation / donationTarget) * 100;
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -58,7 +58,7 @@ const Footer = () => {
         >
           Visit Black Panther Foundation Website
         </a>
-        <DonationModal isOpen={modalIsOpen} onRequestClose={closeModal} />
+        <DonationPopup isOpen={modalIsOpen} onClose={closeModal} />
         {/* Footer Bottom Section */}
         <div className="text-center mt-8 items-center">
           <p className="text-white">

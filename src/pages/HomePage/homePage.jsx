@@ -11,6 +11,14 @@ import toast, { Toaster } from "react-hot-toast";
 import { useWaitForTransaction } from "wagmi";
 import Footer from "../../components/Footer/footer";
 import Popup from "../../components/Popups/propUps";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTelegram,
+  faTwitter,
+  faDiscord,
+  faTiktok,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 import "./homePage.css";
 
 const HomePage = () => {
@@ -216,41 +224,42 @@ const HomePage = () => {
         <span className="text-yellow-500 font-bold mt-2 text-base md:text-lg">
           BLACK PANTHER (BPNTHR)
         </span>
-        <div className="flex mt-4 mb-9">
+        {/* social Media */}
+        <div className="flex mt-4 mb-9 space-x-4">
           <a
             href="https://t.me/blackpanthertkn"
             target="_blank"
-            className="mr-2 md:mr-4 text-white hover:text-gray-300"
+            className="text-yellow-500 hover:text-gray-300"
           >
-            Telegram
+            <FontAwesomeIcon icon={faTelegram} size="2x" />
           </a>
           <a
             href="https://twitter.com/BlackPanthertkn"
             target="_blank"
-            className="mr-2 md:mr-4 text-white hover:text-gray-300"
+            className="text-yellow-500 hover:text-gray-300"
           >
-            Twitter
+            <FontAwesomeIcon icon={faTwitter} size="2x" />
           </a>
           <a
             href="https://discord.com/invite/cQHYs5mUwJ"
             target="_blank"
-            className="mr-2 md:mr-4 text-white hover:text-gray-300"
+            className="text-yellow-500 hover:text-gray-300"
           >
-            Discord
+            <FontAwesomeIcon icon={faDiscord} size="2x" />
           </a>
           <a
             href="https://www.tiktok.com/@blackpanthertkn"
             target="_blank"
-            className="mr-2 md:mr-4 text-white hover:text-gray-300"
+            className="text-yellow-500 hover:text-gray-300"
           >
-            TikTok
+            <FontAwesomeIcon icon={faTiktok} size="2x" />
           </a>
           <a
             href="https://www.instagram.com/blackpanthertkn/"
             target="_blank"
-            className="text-white hover:text-gray-300"
+            className="text-yellow-500 hover:text-gray-300"
           >
-            Instagram
+            <FontAwesomeIcon icon={faInstagram} size="2x" />
           </a>
         </div>
       </animated.div>

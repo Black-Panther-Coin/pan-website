@@ -1,25 +1,21 @@
 import React, { useState, useEffect } from "react";
-import DonationModal from "../Modal/donationModal";
+import DonationPopup from "../Popups/donationPopup";
+import toast, { Toaster } from "react-hot-toast";
 
 const NavButtons = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(true);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [popupIsOpen, setPopupIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset;
-      if (scrollTop > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(scrollTop > 50);
     };
 
     const handleResize = () => {
-      const isMobile = window.innerWidth <= 768;
-      setIsMobile(isMobile);
+      setIsMobile(window.innerWidth <= 768);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -39,20 +35,11 @@ const NavButtons = () => {
   };
 
   const handleDonate = () => {
-    // Open the modal when the "Donate" button is clicked
-    setModalIsOpen(true);
+    setPopupIsOpen(true);
   };
 
-  const closeModal = () => {
-    // Close the modal
-    setModalIsOpen(false);
-  };
-
-  const handleDonateConfirm = (amount) => {
-    // Add logic to handle donation with the selected amount
-    console.log("Donating amount:", amount);
-    // Close the modal after donation confirmation
-    setModalIsOpen(false);
+  const handleClosePopup = () => {
+    setPopupIsOpen(false);
   };
 
   return (
@@ -65,19 +52,16 @@ const NavButtons = () => {
         <div></div>
         <div className="flex items-center">
           <button
-            className="ml-auto bg-yellow-500 hover:bg-gray-200 text-black font-bold py-3 px-6 md:px-8 rounded-full md:my-0 text-sm md:text-md w-full md:w-auto "
+            className="ml-auto bg-yellow-500 hover:bg-gray-200 text-black font-bold py-3 px-6 md:px-8 rounded-full md:my-0 text-sm md:text-md w-full md:w-auto"
             onClick={handleDonate}
           >
             Donate
           </button>
         </div>
       </div>
-      {/* Modal for donation */}
-      <DonationModal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        onDonate={handleDonateConfirm}
-      />
+      {/* Popup for donation */}
+      <DonationPopup isOpen={popupIsOpen} onClose={handleClosePopup} />
+      <Toaster />
     </nav>
   );
 };
