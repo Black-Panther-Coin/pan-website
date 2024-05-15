@@ -39,15 +39,15 @@ const Footer = () => {
           <p className="text-white mb-2 text-lg">
             Donation Target: ${donationTarget}
           </p>
-          <div className="bg-gray-600 h-10 rounded-full overflow-hidden">
+          {/* <div className="bg-gray-600 h-10 rounded-full overflow-hidden">
             <div
               className="bg-yellow-500 h-full rounded-full"
               style={{ width: `${donationProgress}%` }}
             />
-          </div>
-          <p className="text-white mt-2 text-lg">
+          </div> */}
+          {/* <p className="text-white mt-2 text-lg">
             Current amount donated: ${currentDonation}
-          </p>
+          </p> */}
         </div>
         {/* Visit Foundation Website Link */}
         <a
