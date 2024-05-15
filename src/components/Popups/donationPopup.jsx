@@ -17,17 +17,10 @@ const DonationPopup = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
-      <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg max-w-xs w-full md:max-w-sm">
+      <div className="bg-white p-4 md:p-6 rounded-lg shadow-sm max-w-xs w-full md:max-w-sm">
         <h2 className="text-md md:text-lg font-semibold mb-4 text-black text-center">
           Scan or copy wallet address to make your donation
         </h2>
-        <div className="text-center mb-4">
-          <div className="bg-gold rounded-lg inline-block p-2 md:p-4 flex justify-center">
-            <p className="text-yellow-600 font-bold text-xs md:text-sm">
-              0x896C7379cfDA3F3c2D0017f3622b256aC2743ae3
-            </p>
-          </div>
-        </div>
 
         <img
           src={pantherImage}
@@ -37,6 +30,13 @@ const DonationPopup = ({ isOpen, onClose }) => {
         <h4 className="text-black font-bold w-24 text-center h-auto mx-auto">
           BNB
         </h4>
+        <div className="text-center mb-4">
+          <div className="bg-gold rounded-lg inline-block p-2 md:p-4 flex justify-center">
+            <p className="text-yellow-600 font-bold text-xs md:text-sm">
+              0x896C7379cfDA3F3c2D0017f3622b256aC2743ae3
+            </p>
+          </div>
+        </div>
         <div className="text-center mt-4">
           <button
             onClick={handleCopyAddress}
