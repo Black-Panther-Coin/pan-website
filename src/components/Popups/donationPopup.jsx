@@ -34,6 +34,9 @@ const DonationPopup = ({ isOpen, onClose }) => {
           alt="Donation QR Code"
           className="mt-4 w-24 h-auto mx-auto"
         />
+        <h4 className="text-black font-bold w-24 text-center h-auto mx-auto">
+          BNB
+        </h4>
         <div className="text-center mt-4">
           <button
             onClick={handleCopyAddress}
