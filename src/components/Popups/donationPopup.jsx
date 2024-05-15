@@ -17,13 +17,13 @@ const DonationPopup = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
-      <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
-        <h2 className="text-lg font-semibold mb-4 text-black text-center">
+      <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg max-w-xs w-full md:max-w-sm">
+        <h2 className="text-md md:text-lg font-semibold mb-4 text-black text-center">
           Scan or copy wallet address to make your donation
         </h2>
         <div className="text-center mb-4">
           <div className="bg-gold rounded-lg inline-block p-2 md:p-4 flex justify-center">
-            <p className="text-yellow-600 font-bold text-sm md:text-base">
+            <p className="text-yellow-600 font-bold text-xs md:text-sm">
               0x896C7379cfDA3F3c2D0017f3622b256aC2743ae3
             </p>
           </div>
@@ -32,17 +32,17 @@ const DonationPopup = ({ isOpen, onClose }) => {
         <img
           src={pantherImage}
           alt="Donation QR Code"
-          className="mt-4 w-full h-auto mx-auto"
+          className="mt-4 w-24 h-auto mx-auto"
         />
         <div className="text-center mt-4">
           <button
             onClick={handleCopyAddress}
-            className="bg-yellow-500 text-black px-4 py-2 rounded-lg font-bold mr-2"
+            className="bg-yellow-500 text-black px-3 py-2 rounded-lg font-bold text-sm mr-2"
           >
             Copy wallet address
           </button>
           <button
-            className="bg-gray-500 text-white px-4 py-2 rounded-lg"
+            className="bg-gray-500 text-white px-3 py-2 rounded-lg text-sm"
             onClick={onClose}
           >
             Cancel
